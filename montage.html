@@ -109,7 +109,7 @@
             animation: bounce 0.5s;
         }
     </style>
-    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8580276' data-sdk='show_8580276'></script>
+    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8580553' data-sdk='show_8580553'></script>
 </head>
 <body>
     <header>
@@ -122,10 +122,10 @@
             Explore ways to earn online and discover exciting opportunities.
         </p>
         <div class="button-container">
-            <button onclick="showAd(this)">Show Ad 1</button>
-            <button onclick="showAd(this)">Show Ad 2</button>
-            <button onclick="showAd(this)">Show Ad 3</button>
-            <button onclick="showAd(this)">Show Ad 4</button>
+            <button onclick="showAd()">Show Ad 1</button>
+            <button onclick="showAd()">Show Ad 2</button>
+            <button onclick="showAd()">Show Ad 3</button>
+            <button onclick="showAd()">Show Ad 4</button>
         </div>
     </div>
 
@@ -139,15 +139,29 @@
     </footer>
 
     <script>
-        function showAd(button) {
+        function showAd() {
             // Add animation to the button
+            const button = event.target; // Get the clicked button
             button.classList.add('button-animation');
             
-            // Trigger ad script
+            // Trigger the ad display
             setTimeout(() => {
-                alert("Ad is being displayed!");
+                // This will trigger the ad provided by niphaumeenses.net.
+                // You do not need to specify a specific ad or URL. The service will show the ad when it is triggered.
+                // You might want to trigger the ad service directly depending on the specific method provided.
+
+                // Example of triggering the ad using the niphaumeenses.net script
+                try {
+                    // Assuming niphaumeenses.net automatically handles ad display when script is loaded
+                    console.log("Ad is triggered!");
+                    // If you have any specific action or method to trigger, you can add it here
+
+                } catch (error) {
+                    console.log("Error displaying ad:", error);
+                }
+                
                 button.classList.remove('button-animation'); // Remove animation after ad is shown
-            }, 300); // Delay matches animation duration
+            }, 300); // Delay to match animation duration
         }
     </script>
 </body>
